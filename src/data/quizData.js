@@ -15,7 +15,7 @@ const quizData = {
     category: "디자인 역사",
     difficulty: "보통",
     question: "🖌️ 아르누보(Art Nouveau) 스타일의 대표적인 특징은 무엇일까?",
-    choices: ["곡선과 자연 모티브","기하학적 패턴","미니멀리즘","추상 표현"],
+    choices: ["기하학적 패턴","미니멀리즘","곡선과 자연 모티브","추상 표현"],
     correct: "곡선과 자연 모티브"
     },
     {
@@ -31,7 +31,7 @@ const quizData = {
     category: "디자인 역사",
     difficulty: "쉬움",
     question: "🖼️ 팝 아트(Pop Art)를 대표하는 아티스트는 누구일까?",
-    choices: ["앤디 워홀", "파블로 피카소", "빈센트 반 고흐", "클로드 모네"],
+    choices: ["파블로 피카소", "빈센트 반 고흐", "클로드 모네","앤디 워홀"],
     correct: "앤디 워홀"
     },
     {

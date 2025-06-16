@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const QuizPage = ({quiz,onFinished}) => {
+const QuizPage = ({quiz,onFinished,onSelect}) => {
     const [currentIdx,setCurrentIdx] = useState(0);
     const [score,setScore] = useState(0);
     const currenQuiz = quiz[currentIdx];
@@ -20,9 +20,27 @@ const QuizPage = ({quiz,onFinished}) => {
             onFinished(result);
         }
     }
+    const handleBack =()=>{   //문제 이전 버튼 넘기기
+        if(currentIdx-1 >= 0){
+            setCurrentIdx(currentIdx-1);
+        } else {
+            onSelect(null);
+        }
+    }
+    const handleNext = ()=>{
+        if(currentIdx+1 < quiz.length){
+            setCurrentIdx(currentIdx+1)
+        } else{
+            console.log("다음 문제가 없습니다!")
+        }
+    }
     return (
         <div className='quiz-page'>
-            <h2>＜ 퀴즈({currentIdx+1}/{quiz.length}) ＞</h2>
+            <div className="quiz-top">
+            <button onClick={handleBack}>＜</button>
+            <h2> 퀴즈({currentIdx+1}/{quiz.length}) </h2>
+            <button onClick={handleNext}>＞</button>
+            </div>
             <div className="quiz-question">
             <p>Q 질문</p>
             <p>{currenQuiz.question}</p>

@@ -13,7 +13,6 @@ const App = () => {
                     //자식이 선택한 select값
   const onSelectCategory =(select)=>{
     setcategory(select);
-
     const quizArr = quizData.quizzes.filter((data)=>{
       return data.category === select;
     });
@@ -27,6 +26,9 @@ const App = () => {
     setcategory('');
     setFinished(false);
   }
+  const handleCategory =(obj)=>{
+    setcategory(obj)
+  }
   return (
     <div className="app">
       { 
@@ -34,7 +36,7 @@ const App = () => {
       <Categoris categoris={quizData.categories} onSelect={onSelectCategory}/>
       }
       {
-        category && !finished &&(<QuizPage quiz={filterQuiz} onFinished={handleFinish}/>)
+        category && !finished &&(<QuizPage quiz={filterQuiz} onFinished={handleFinish} onSelect={handleCategory}/>)
       } 
       {
         finished && (<Results onRestart={handleRestart} appScore={score}/>)
